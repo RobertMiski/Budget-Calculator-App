@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
 
-
+// etc
   function delIncome(id) {
     let index = details.findIndex((item) => item.id === id);
     details.splice(index, 1);
