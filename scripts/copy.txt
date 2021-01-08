@@ -1,0 +1,119 @@
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
+let incomeObj={};
+let expenseObj={};
+let entry_list = [];
+
+function inputCalc() {
+  let incomeExpense =document.querySelector('#income-expense').value ; 
+  let description = document.querySelector('#description').value; 
+  let value =document.querySelector('#value').value ;
+  let income = document.getElementById('income-table');
+  let expense = document.getElementById('expenses-table');
+  let budget = document.querySelector('.budget');
+  let dollar ="$";
+  let incomeTotal = calculateTotal("income", entry_list);
+  let expenseTotal = calculateTotal("expense", entry_list); 
+  let balance = incomeTotal - expenseTotal;
+  
+
+  function calculateTotal(type, entry_list) {
+    let sum =parseInt(value);
+    entry_list.forEach(entry => {
+      if(entry.type == type) {
+        sum+=entry.amount; 
+      }
+    })
+    return parseInt(sum);
+  }
+
+  if(!incomeExpense || !value) return;
+
+  let incomeObj = {
+    type:"income",
+    title:description,
+    amount: parseInt(value),
+    
+      }
+  let expenseObj = {
+    type:"expense",
+    title:description,
+    amount: parseInt(value),  } // <td> <a class="btn-floating red delete"><i class="material-icons">delete</i></a>  </td> 
+  
+// Create Rows and Columns for the new items 
+  let template = `
+  <tr >
+  <td>${description} </td>
+  <td>${value} ${dollar} </td>
+  
+  </tr>
+  
+  `;
+
+  if(incomeExpense==2) {
+  /*  for (let i = 0;i<income.rows.length;i++) {
+      sum = sum+ parseInt(income.rows[i].cells[1].innerHTML);
+      
+    } */
+    
+
+    entry_list.push(incomeObj); // Update the object array 
+    
+    income.innerHTML+=template;
+  
+    /* income.addEventListener('click', onDeleteRow) */
+
+
+    
+    
+
+  } else if (incomeExpense==1) {
+    
+    entry_list.push(expenseObj);
+    expense.innerHTML+=template;
+    /* expense.addEventListener('click', onDeleteRow); */
+    
+
+  }
+  
+  budget.innerHTML=parseInt(incomeTotal-expenseTotal);
+  console.log(total,entry_list);
+  
+}
+  
+  /*  let incomeTable = document.getElementById('income-table').innerHTML= "<tr>"+"<td>"+description+"</td>"+  "</tr>"+"<tr>"+"<td>"+value+"</td>"+  "</tr>";
+  let expensesTable = document.getElementById('expenses-table').innerHTML= "<tr>"+"<td>"+description+"</td>"+  "</tr>"+"<tr>"+"<td>"+value+"</td>"+  "</tr>"; */
+  
+  document.querySelector('.btn-large').addEventListener('click', inputCalc );
+
+
+  
+  function onDeleteRow (e) {
+    if (e.target.classList.contains('delete')){
+      return;
+    }
+    for(entry in entry_list) {
+      entry.id-=1;
+    }
+    
+    const btn = e.target;
+    btn.closest('tr').remove();
+    entry_list.splice(entry.id,1);
+    /* index = entry_list.findIndex(x => x.amount ===`${value}`); */
+    entry_list.forEach(entry=> {
+      
+    })
+    console.log(entry_list);
+      
+  }
+
+/* function clearInput(inputsArray) { 
+  inputsArray.forEach(input => {input.value="";})
+} */
+
+

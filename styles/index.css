@@ -1,0 +1,73 @@
+html,
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+.plm {
+}
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("https://images.hdqwalls.com/download/long-mountain-ranges-landscape-orange-dark-sky-5k-vx-1920x1080.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  line-height: 0.2rem;
+  margin-top: -1.2rem;
+}
+
+.incomex {
+  margin-left: 41% !important;
+}
+.head {
+  height: 17rem;
+  background-color: black;
+  line-height: 2.5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://images.hdqwalls.com/download/long-mountain-ranges-landscape-orange-dark-sky-5k-vx-1920x1080.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.box {
+}
+.display {
+  background-color: rgb(255, 255, 255);
+  line-height: 1rem;
+  grid-gap: 2rem;
+}
+
+.income {
+  border: solid 2rem #ffffff;
+}
+
+.expenses {
+  border: solid 2rem #ffffff;
+}
+
+.valueadd {
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    overflow: scroll;
+  }
+  .valueadd {
+    margin: 0 auto !important;
+  }
+
+  .manele .box {
+    margin-left: -1rem !important;
+  }
+  .manele .desc,
+  .val {
+    margin-left: -3.7rem !important;
+  }
+  .manele .btn-large {
+    margin-left: -5.2rem !important;
+  }
+}
+
+.manele {
+  margin-left: 20% !important;
+}
