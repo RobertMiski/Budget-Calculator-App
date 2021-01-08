@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
       income.innerHTML+=`
   <tr id="${details[i].id}">
     <td> ${details[i].name} </td>
-    <td>$${details[i].number}.00 </td>
+    <td>€${details[i].number}.00 </td>
     <td> <a class="btn-floating orange waves-effect"  onclick="editIncome(${details[i].id})" id="${details[i].id}"><i class="material-icons">edit</i></a>  </td> 
     <td> <a class="btn-floating red waves-effect"  onclick="delIncome(${details[i].id})" id="${details[i].id}"><i class="material-icons">delete</i></a>  </td> 
     
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         expense.innerHTML+=`
         <tr id="${details[i].id}">
           <td> ${details[i].name} </td>
-          <td>$${details[i].number}.00  </td>
+          <td>€${details[i].number}.00  </td>
           <td> <a class="btn-floating orange waves-effect"  onclick="editIncome(${details[i].id})" id="${details[i].id}"><i class="material-icons">edit</i></a>  </td> 
           <td> <a class="btn-floating red waves-effect"  onclick="delIncome(${details[i].id})" id="${details[i].id}"><i class="material-icons">delete</i></a>  </td> 
           
@@ -118,9 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   }
     
-    incomeAmmount.innerText= "INCOME: $" + totalInc +".00" ;
-    expenseAmmount.innerText= "EXPENSE: $" + totalInc2 +".00" ;
-    budget.innerText=`$${totalInc-totalInc2}.00`
+    incomeAmmount.innerText= "INCOME: €" + totalInc +".00" ;
+    expenseAmmount.innerText= "EXPENSE: €" + totalInc2 +".00" ;
+    budget.innerText=`€${totalInc-totalInc2}.00`
 
   }
   
