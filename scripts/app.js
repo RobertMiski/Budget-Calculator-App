@@ -29,19 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
       number: parseInt(valuenr.value),
       type:parseInt(incomeExpense),
     };
-    /* let userExp = {
-      id: id,
-      name: description.value,
-      number: parseInt(valuenr.value),
+    
+    if(isNaN(userInc.number) && userInc.name==='') {
+      alert("Error: Fields cannot be empty !")
       
-    }; */
-    
-    /* if(incomeExpense==2){ */
-    
-      details.push(userInc);
-    
-    /* } */
-    
+      } else {  
+        details.push(userInc);
+      }
+
     console.log(details);
     id++;
     description.value="";
@@ -161,14 +156,21 @@ document.addEventListener('DOMContentLoaded', function() {
       let editExpNumber = parseInt(document.querySelector('#editValue').value);
       
       let edited = details.findIndex((item) => item.id === id);
+    if(isNaN(editExpNumber) || editExpName==="") {
+      alert("Error: Fields cannot be empty !");
+    }
+      
+      else {
       details[edited].name = editExpName;
       details[edited].number= editExpNumber;
 
-
       console.log(editExpNumber, editExpName)
+      editing.innerHTML=null;
+      }
+
       calcIncome();
       displayInc(details);
-      editing.innerHTML=null;
+      
     })
     
     
