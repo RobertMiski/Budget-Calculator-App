@@ -66,6 +66,15 @@ body {
   .manele .btn-large {
     margin-left: -5.2rem !important;
   }
+
+  .savant {
+    margin-top: 1.5rem !important;
+    margin-right: 3rem !important;
+  }
+
+  .editvaluelabel {
+    margin-right: 2.2rem !important;
+  }
 }
 
 .manele {

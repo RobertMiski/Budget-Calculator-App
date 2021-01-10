@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
       </div>
       <div class="col s12 m2 l2 input field ">
-        <textarea  id="editValue" class="materialize-textarea center  validate"></textarea>
-          <label for="editValue">Value</label>
+        <textarea  id="editValue" class="materialize-textarea center-align  validate"></textarea>
+          <label for="editValue" class="editvaluelabel">Value</label>
           <div class="col s1 m1 l1"></div>
-          <div class="col s12 m1 l1 right"><a class="btn-floating btn-large waves-effect waves-light green save" id="save" style="margin-left: 3rem; margin-top: -3rem; " ><i class="material-icons">save</i></a></div>
+          <div class="col s12 m1 l1 right"><a class="btn-floating btn-large waves-effect waves-light green save savant" id="save" style="margin-left: 3rem; margin-top: -3rem; " ><i class="material-icons">save</i></a></div>
 
       </div>
     `;
